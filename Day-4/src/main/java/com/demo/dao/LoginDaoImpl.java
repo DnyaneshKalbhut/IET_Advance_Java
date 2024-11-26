@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import com.demo.beans.MyUser;
 import com.demo.beans.Person;
@@ -19,7 +20,7 @@ public class LoginDaoImpl implements LoginDao {
 		 try {
 			seluser=conn.prepareStatement("select name,password,role from user where name =? and password = ?  ");
 			adduser = conn.prepareStatement("insert into user(name,password,role) values(?,?,?)");
-			sdetails= conn.prepareStatement("insert into person(fname,lname,gender,degree,city,skills) values(?,?,?,?,?,?)");
+			sdetails= conn.prepareStatement("insert into person(fname,lname,gender,degree,city,skill) values(?,?,?,?,?,?)");
 			
 		} catch (SQLException e) {
 		
@@ -62,6 +63,7 @@ public class LoginDaoImpl implements LoginDao {
 				sdetails.setString(3, p1.getGender());
 				sdetails.setString(4, p1.getDegree());
 				sdetails.setString(5, p1.getCity());
+				System.out.println(Arrays.toString(p1.getSkills()));
 				sdetails.setString(6,String.join(",",p1.getSkills()) );
 				sdetails.executeUpdate();
 				conn.commit();

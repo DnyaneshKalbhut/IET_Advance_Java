@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
 		String gender=request.getParameter("gender");
 		String degree=request.getParameter("degree");
 		String city=request.getParameter("city");
-		String[] skills = request.getParameterValues("skill");
+		String[] skills = request.getParameterValues("skills");
 		LoginService ls = new LoginServiceImpl();
 		
 		Person p1 = new Person(fname,lname,gender,degree,skills,city);
