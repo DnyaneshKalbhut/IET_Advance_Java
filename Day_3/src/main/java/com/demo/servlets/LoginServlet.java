@@ -16,8 +16,6 @@ public class LoginServlet extends HttpServlet{
 		String passwd=req.getParameter("passwd");
 		if(uname.equals("admin1") && passwd.equals("admin")){
 			out.println("<h1>Login successful!!!</h1>");
-			
-				
 		}else {
 			out.println("<h1>Login unsuccessful!!!</h1>");
 		}
