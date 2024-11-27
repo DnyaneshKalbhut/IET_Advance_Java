@@ -8,10 +8,4 @@ public interface ProductService {
 
 	List<Product> getAllProduct();
 
-	void insertProduct(Product p);
-
-	Product getById(int pid);
-
-	boolean deletById(int pid);
-
 }

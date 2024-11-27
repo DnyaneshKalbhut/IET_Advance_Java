@@ -15,22 +15,4 @@ public class ProductServiceImpl implements ProductService {
 		
 		return pdao.showAllProduct();
 	}
-
-	@Override
-	public void insertProduct(Product p) {
-		pdao.insertProduct(p);
-		
-	}
-
-	@Override
-	public Product getById(int pid) {
-		
-		return pdao.getById(pid);
-	}
-
-	@Override
-	public boolean deletById(int pid) {
-
-		return pdao.deleteById(pid);
-	}
 }
